@@ -1,6 +1,6 @@
 # c_test_task
 
-1 Install [NNG] (https://github.com/nanomsg/nng)
+1 Install [NNG](https://github.com/nanomsg/nng)
 
 Linux installation:
   $ git clone https://github.com/nanomsg/nng
