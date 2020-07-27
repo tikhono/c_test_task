@@ -1,6 +1,6 @@
 # c_test_task
 
-1 Install [NNG](https://github.com/nanomsg/nng)
+## 1 Install [NNG](https://github.com/nanomsg/nng)
 
 Linux installation:
 ```
@@ -14,19 +14,21 @@ Linux installation:
   $ ninja install
 ```
   
-2 Build project
+## 2 Build project
 ```
   $ cmake CmakeLists.txt -B build
   $ cd build
   $ make
 ```
   
-3 Run server
+## 3 Run server
 ```
   $ ./server 127.0.0.1:8000
 ```
   
-4 Run client
-  '$ ./client filename'
+## 4 Run client
+```
+  $ ./client filename
   or
-  '$ ./client 127.0.0.1:8000'
+  $ ./client 127.0.0.1:8000
+```
