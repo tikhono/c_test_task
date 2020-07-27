@@ -14,18 +14,13 @@ Linux installation:
   $ ninja install
 ```
 
-## 2 Install [NNG](https://github.com/nanomsg/nng)
+## 2 Install [Lib Sodium](https://github.com/jedisct1/libsodium)
 
 Linux installation:
 ```
-  $ git clone https://github.com/nanomsg/nng
-  $ cd nng
-  $ mkdir build
-  $ cd build
-  $ cmake -G Ninja ..
-  $ ninja
-  $ ninja test
-  $ ninja install
+  $ ./configure
+  $ make && make check
+  $ sudo make install
 ```
   
 ## 3 Build project
