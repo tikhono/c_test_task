@@ -23,12 +23,12 @@ Linux installation:
   
 ## 3 Run server
 ```
-  $ ./server 127.0.0.1:8000
+  $ ./server tcp://127.0.0.1:8000
 ```
   
 ## 4 Run client
 ```
   $ ./client filename
   or
-  $ ./client 127.0.0.1:8000
+  $ ./client tcp://127.0.0.1:8000
 ```
