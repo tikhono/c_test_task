@@ -4,6 +4,8 @@
 #include <time.h>
 #include <limits.h>
 
+#include <sodium.h>
+
 #include <nng/nng.h>
 #include <nng/protocol/reqrep0/rep.h>
 #include <nng/supplemental/util/platform.h>
@@ -26,7 +28,10 @@ struct work {
 int64_t
 random_int(void)
 {
-	return rand() - (rand() / 2);
+	int64_t	res = 0;
+	randombytes_buf(&res, sizeof(res));
+	return res;
+	//return LLONG_MIN + rand() % LLONG_MAX + rand() % LLONG_MAX + rand() % 4;
 }	// to get full range of int range [min int; max int]
 
 void
@@ -63,7 +68,7 @@ server_cb(void *arg)
 		for (uint16_t i = 0; i < numbers_count; i++) {
 			int64_t cur_number = random_int();
 			nng_msg_append_u64(work->msg, cur_number);
-			fprintf(stdout, "wrote %d\n", cur_number);
+			fprintf(stdout, "wrote %lld\n", cur_number);
 		}
 		work->state = WAIT;
 		nng_sleep_aio(SLEEP_TIME, work->aio);
@@ -139,6 +144,9 @@ main(int argc, char **argv)
 	int rc;
 
 	if (argc == 2) {
+		if (sodium_init() == -1) {
+			exit(EXIT_FAILURE);
+		}
 		fprintf(stdout, "Get adress: \"%s\"", argv[1]);
 		rc = server(argv[1]);
 	} else {

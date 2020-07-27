@@ -18,6 +18,7 @@ find_package(nng CONFIG REQUIRED)
 
 add_executable(server server.c)
 target_link_libraries(server nng::nng)
+target_link_libraries(server -lsodium)
 target_compile_definitions(server PRIVATE -DPARALLEL=${PARALLEL} )
 
 add_executable(client client.c)
