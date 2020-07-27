@@ -13,20 +13,37 @@ Linux installation:
   $ ninja test
   $ ninja install
 ```
+
+## 2 Install [NNG](https://github.com/nanomsg/nng)
+
+Linux installation:
+```
+  $ git clone https://github.com/nanomsg/nng
+  $ cd nng
+  $ mkdir build
+  $ cd build
+  $ cmake -G Ninja ..
+  $ ninja
+  $ ninja test
+  $ ninja install
+```
   
-## 2 Build project
+## 3 Build project
 ```
   $ cmake CmakeLists.txt -B build
   $ cd build
   $ make
 ```
   
-## 3 Run server
+## 4 Run server or create file
 ```
   $ ./server tcp://127.0.0.1:8000
+  or
+  $ touch filename.txt
+  $ vim filename.txt
 ```
   
-## 4 Run client
+## 5 Run client to parse from file or server
 ```
   $ ./client filename
   or
