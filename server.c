@@ -31,8 +31,6 @@ random_int(void)
 	int64_t	res = 0;
 	randombytes_buf(&res, sizeof(res));
 	return res;
-	//return LLONG_MIN + rand() % LLONG_MAX + rand() % LLONG_MAX + rand() % 4;
-}	// to get full range of int range [min int; max int]
 
 void
 fatal(const char *func, int rv)
