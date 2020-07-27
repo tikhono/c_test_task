@@ -3,6 +3,7 @@
 1 Install [NNG](https://github.com/nanomsg/nng)
 
 Linux installation:
+```
   $ git clone https://github.com/nanomsg/nng
   $ cd nng
   $ mkdir build
@@ -11,16 +12,21 @@ Linux installation:
   $ ninja
   $ ninja test
   $ ninja install
+```
   
 2 Build project
+```
   $ cmake CmakeLists.txt -B build
   $ cd build
   $ make
+```
   
 3 Run server
+```
   $ ./server 127.0.0.1:8000
+```
   
 4 Run client
-  $ ./client filename
+  '$ ./client filename'
   or
-  $ ./client 127.0.0.1:8000
+  '$ ./client 127.0.0.1:8000'
